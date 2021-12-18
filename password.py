@@ -1,11 +1,17 @@
 import string
 import random
 
-def save(list):
+def save_txt(list):
     archive = open('passwords.txt', 'a')
     archive.write(list + "\n")
     archive.close()
 
+def reader_txt():
+    archive = open('passwords.txt', 'r')
+    for line in archive:
+        line = line.rstrip()
+        print(line)
+    archive.close()
 
 def pass_gen():
 
@@ -39,11 +45,11 @@ def pass_gen():
         #password_list.append(password_result)
 
         #chama a funcao save, para salvar as senhas em um arquivo txt
-        save(password_result)
+        save_txt(password_result)
 
         number_password -= 1
 
-        # imprimir palavra-passe gerada
+        # imprimi a senha gerada
         print("A senha gerada é : ", password_result)
 
 
