@@ -18,8 +18,6 @@ def pass_gen():
     pass_list.extend(string_digits)
     pass_list.extend(string_punctuation)
 
-    # embaralha os caracteres da lista(reorganiza a ordem dos itens da lista)
-    #random.shuffle(pass_list)
 
     # obter o comprimento da senha a partir da entrada do utilizador
     pass_length = int(input("Insira o comprimento (tamanho) da senha: "))
@@ -28,9 +26,10 @@ def pass_gen():
     num = 0
     #password_list = []
     while number_password != num:
+        # embaralha os caracteres da lista(reorganiza a ordem dos itens da lista)
+        random.shuffle(pass_list)
         # converter a lista de palavras-passe em cadeia do índice
         # 0 para o comprimento da palavra-passe introduzida pelo utilizador
-        random.shuffle(pass_list)
         password_result = "".join(pass_list[0:pass_length])
         #password_list.append(password_result)
 
