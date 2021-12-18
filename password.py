@@ -1,6 +1,11 @@
 import string
 import random
 
+def save(list):
+    archive = open('passwords.txt', 'a')
+    archive.write(list + "\n")
+    archive.close()
+
 
 def pass_gen():
 
@@ -32,6 +37,9 @@ def pass_gen():
         # 0 para o comprimento da palavra-passe introduzida pelo utilizador
         password_result = "".join(pass_list[0:pass_length])
         #password_list.append(password_result)
+
+        #chama a funcao save, para salvar as senhas em um arquivo txt
+        save(password_result)
 
         number_password -= 1
 
