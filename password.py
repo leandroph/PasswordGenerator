@@ -1,17 +1,12 @@
 import string
 import random
 
+
 def save_txt(list):
     archive = open('passwords.txt', 'a')
     archive.write(list + "\n")
     archive.close()
 
-def reader_txt():
-    archive = open('passwords.txt', 'r')
-    for line in archive:
-        line = line.rstrip()
-        print(line)
-    archive.close()
 
 def pass_gen():
 
@@ -35,18 +30,16 @@ def pass_gen():
     number_password = int(input("Insira a quantidade de senhas a serem geradas: "))
 
     num = 0
-    #password_list = []
+
     while number_password != num:
         # embaralha os caracteres da lista(reorganiza a ordem dos itens da lista)
         random.shuffle(pass_list)
         # converter a lista de palavras-passe em cadeia do índice
         # 0 para o comprimento da palavra-passe introduzida pelo utilizador
         password_result = "".join(pass_list[0:pass_length])
-        #password_list.append(password_result)
 
-        #chama a funcao save, para salvar as senhas em um arquivo txt
+        # chama a funcao save, para salvar as senhas em um arquivo txt
         save_txt(password_result)
-
         number_password -= 1
 
         # imprimi a senha gerada
@@ -55,3 +48,4 @@ def pass_gen():
 
 
 pass_gen()
+
